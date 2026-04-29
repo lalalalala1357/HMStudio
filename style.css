@@ -1,0 +1,65 @@
+/* style.css - 修正頁尾切除問題 */
+
+html, body {
+    height: 100%; /* 重要：讓網頁高度滿版 */
+    margin: 0;
+    padding: 0;
+  }
+  
+  body { 
+    font-family: "微軟正黑體", sans-serif; 
+    background: #FDFBF7; 
+    color: #5D4037; 
+    display: flex;
+    flex-direction: column; /* 讓內容由上而下排列 */
+    min-height: 100vh;
+  }
+  
+  /* 核心修正：讓 main 自動撐開剩餘空間 */
+  main {
+    flex: 1 0 auto; /* 👈 這行會把頁尾推到最下面 */
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px 100px 20px; /* 底部留 100px 給 LINE 懸浮按鈕 */
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* 導航列樣式 */
+  header { 
+    background: #EFEBE9; 
+    padding: 20px; 
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    flex-shrink: 0; /* 防止導覽列被擠壓 */
+  }
+  
+  header h2 { margin: 0; color: #4E342E; font-size: 1.5rem; }
+  
+  nav ul { 
+    list-style: none; display: flex; gap: 15px; 
+    padding: 15px 0 0; margin: 0; justify-content: center;
+  }
+  
+  nav a { 
+    text-decoration: none; color: #795548; font-weight: bold; 
+    padding: 8px 15px; border-radius: 20px; transition: 0.3s;
+  }
+  
+  nav a:hover, nav a.active { background: #8D6E63; color: #fff !important; }
+  
+  /* 頁尾樣式 - 確保咖啡色區塊完整 */
+  footer { 
+    flex-shrink: 0; /* 👈 防止頁尾縮小 */
+    background: #EFEBE9; 
+    padding: 40px 20px; 
+    text-align: center; 
+    font-size: 0.9rem;
+    color: #6D4C41;
+    width: 100%;
+    box-sizing: border-box;
+    border-top: 1px solid #D7CCC8;
+  }
+  
+  footer a { color: #8D6E63; text-decoration: none; font-weight: bold; }

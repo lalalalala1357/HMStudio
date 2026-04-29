@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>服務項目 | 手作縫紉工作室</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+  /* 針對服務頁面的特別美化 */
+  .services-wrapper {
+    max-width: 800px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    text-align: left;
+  }
+
+  .page-title {
+    text-align: center;
+    color: #4E342E;
+    margin-bottom: 10px;
+  }
+
+  .price-notice {
+    text-align: center;
+    color: #D84315;
+    background: #FFF3E0;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+  }
+
+  .service-category {
+    margin-bottom: 40px;
+  }
+
+  .service-category h2 {
+    color: #8D6E63;
+    border-bottom: 2px solid #D7CCC8;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* 價目表清單樣式 */
+  .price-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .price-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 10px;
+    border-bottom: 1px dashed #EFEBE9;
+    color: #5D4037;
+  }
+
+  .price-list li:hover {
+    background-color: #FDFBF7;
+  }
+
+  .item-name {
+    font-weight: bold;
+  }
+
+  .item-price {
+    color: #8D6E63;
+    font-weight: bold;
+  }
+
+  /* 手作訂製區塊 */
+  .custom-box {
+    background: #FDFBF7;
+    border: 2px dashed #D7CCC8;
+    padding: 20px;
+    border-radius: 10px;
+    color: #6D4C41;
+    line-height: 1.8;
+  }
+
+  .custom-box ul {
+    padding-left: 20px;
+    margin-top: 10px;
+  }
+
+  .cta-area {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .cta-area .btn-main {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #8D6E63;
+    color: #fff;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  .cta-area .btn-main:hover {
+    background: #6D4C41;
+  }
+</style>
+</head>
+<body>
+
+<div id="navbar-placeholder"></div>
+
+<main>
+  <div class="services-wrapper">
+    <h1 class="page-title">服務項目與收費參考</h1>
+    <div class="price-notice">
+      💡 溫馨提醒：實際價格會依衣物材質（如雪紡、牛仔布）、款式複雜度有所調整。<br>
+      建議先加 LINE 傳送照片，我們會為您做最準確的報價喔！
+    </div>
+
+    <div class="service-category">
+      <h2>✂️ 尺寸修改 (改長短/寬窄)</h2>
+      <ul class="price-list">
+        <li>
+          <span class="item-name">一般長褲 / 牛仔褲 改短</span>
+          <span class="item-price">$100 起</span>
+        </li>
+        <li>
+          <span class="item-name">西裝褲 / 寬褲 改短 (需盲縫處理)</span>
+          <span class="item-price">$150 起</span>
+        </li>
+        <li>
+          <span class="item-name">一般裙襬 / 洋裝 改短</span>
+          <span class="item-price">$150 起</span>
+        </li>
+        <li>
+          <span class="item-name">褲頭腰圍 改大 / 改小</span>
+          <span class="item-price">$200 起</span>
+        </li>
+        <li>
+          <span class="item-name">衣服袖長 改短</span>
+          <span class="item-price">$150 起</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="service-category">
+      <h2>🧵 拉鍊更換與細部修補</h2>
+      <ul class="price-list">
+        <li>
+          <span class="item-name">一般長褲 / 裙子 換拉鍊</span>
+          <span class="item-price">$150 起</span>
+        </li>
+        <li>
+          <span class="item-name">一般外套 換拉鍊</span>
+          <span class="item-price">$250 起</span>
+        </li>
+        <li>
+          <span class="item-name">隱形拉鍊 更換</span>
+          <span class="item-price">$200 起</span>
+        </li>
+        <li>
+          <span class="item-name">破洞修補 / 創意補丁</span>
+          <span class="item-price">$100 起</span>
+        </li>
+        <li>
+          <span class="item-name">鈕扣脫落 / 鬆緊帶更換</span>
+          <span class="item-price">$50 起</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="service-category">
+      <h2>👜 專屬手作包包訂製</h2>
+      <div class="custom-box">
+        <p>除了衣物修改，媽媽也熱愛製作充滿溫度的布包與小物。您可以直接告訴我們您的需求，為您量身打造專屬布藝品：</p>
+        <ul>
+          <li><strong>款式選擇：</strong> 托特包、便當袋、零錢包、環保杯套等。</li>
+          <li><strong>布料花色：</strong> 可於 LINE 上溝通您喜歡的色系或風格（日系、鄉村風、素色質感）。</li>
+          <li><strong>製作工期：</strong> 因利用下班後純手工製作，客製化商品約需 7-14 個工作天，感謝您的耐心等待。</li>
+        </ul>
+        <p style="margin-top: 15px; font-weight: bold; color: #8D6E63;">
+          👉 想看媽媽的作品嗎？請點擊上方選單的「手作成品」區逛逛喔！
+        </p>
+      </div>
+    </div>
+
+    <div class="cta-area">
+      <p style="margin-bottom: 15px; color: #6D4C41;">準備好要修改衣物，或是訂製專屬手作了嗎？</p>
+      <a href="booking.html" class="btn-main">前往線上預約單</a>
+    </div>
+
+  </div>
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script src="navbar.js"></script>
+<script src="footer.js"></script>
+
+</body>
+</html>
