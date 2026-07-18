@@ -9,7 +9,6 @@
     elements.heroImage = document.getElementById("heroProductImage");
     elements.heroCaption = document.getElementById("heroImageCaption");
     elements.categoryImages = Array.from(document.querySelectorAll("[data-category-image]"));
-    elements.storyImage = document.getElementById("storyImage");
   }
 
   function getCreatedTime(product) {
@@ -49,8 +48,6 @@
     elements.categoryImages.forEach((image, index) => {
       setImage(image, imageProducts[index % imageProducts.length], image.alt || "手作商品照片");
     });
-
-    setImage(elements.storyImage, imageProducts[1] || imageProducts[0], "手作縫紉工作室作品照片");
   }
 
   async function loadHomeImages() {
