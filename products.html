@@ -2,155 +2,83 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
-<title>手作成品 | 手作縫紉工作室</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.gstatic.com; style-src 'self'; img-src 'self' data: blob:; connect-src 'self' https://*.googleapis.com https://*.firebaseio.com https://*.firebaseapp.com; frame-src https://*.firebaseapp.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>全部商品 | 手作縫紉工作室</title>
+<meta name="description" content="瀏覽手作縫紉工作室的現貨手作包、布藝生活小物與接單製作商品，可依關鍵字、分類、狀態與價格排序篩選。">
+<meta property="og:title" content="全部商品 | 手作縫紉工作室">
+<meta property="og:description" content="查看最新上架的手作布包與布藝生活小物，透過 LINE 確認庫存與購買方式。">
+<meta property="og:image" content="baghead.jpg">
+<link rel="canonical" href="https://example.com/products.html">
+<link rel="icon" href="baghead.jpg">
 <link rel="stylesheet" href="style.css">
-
-<style>
-  main { 
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 0 20px; 
-  }
-  
-  h1 { color: #4E342E; margin-bottom: 10px; text-align: center; }
-  .page-desc { text-align: center; color: #795548; margin-bottom: 40px; }
-
-  .product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 25px;
-  }
-
-  .product-card {
-    background: white; border-radius: 15px; overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    transition: transform 0.3s; display: flex; flex-direction: column;
-  }
-  .product-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
-  
-  /* --- 👇 這裡做了修改以適應 3024*4032 的直式照片 --- */
-  .product-img { 
-  width: 100%; 
-  aspect-ratio: 3 / 4; 
-  object-fit: contain; /* 維持 contain 讓照片不被裁切 */
-  background: #EFEBE9; 
-  
-  /* 👇 加上這行魔法，防止圖片無限長高 */
-  max-height: 300px; 
-}
-  
-  .product-info { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; text-align: center; }
-  .product-title { font-size: 1.2rem; font-weight: bold; color: #4E342E; margin-bottom: 10px; }
-  .product-desc { font-size: 0.95rem; color: #8D6E63; margin-bottom: 15px; line-height: 1.6; flex-grow: 1; white-space: pre-wrap; text-align: left; }
-  .product-price { font-size: 1.1rem; font-weight: bold; color: #D84315; margin-bottom: 15px; }
-  
-  .buy-btn {
-  background-color: #8D6E63; 
-  color: white; 
-  border: none; 
-  padding: 12px; 
-  width: 100%;
-  border-radius: 30px; 
-  cursor: pointer; 
-  font-size: 1rem; 
-  text-decoration: none; 
-  font-weight: bold; 
-  transition: 0.3s;
-  
-  /* 👇 加上下面這兩行來修復切掉的問題 */
-  box-sizing: border-box; /* 讓 padding 往內縮，確保右邊圓角不會超出卡片被切掉 */
-  display: flex; justify-content: center; align-items: center; /* 讓 emoji 和文字完美水平+垂直置中 */
-  }
-  .buy-btn:hover { background-color: #6D4C41; }
-  
-  #loading { text-align: center; font-size: 1.1rem; color: #8D6E63; margin-top: 50px; }
-</style>
 </head>
 <body>
-
 <div id="navbar-placeholder"></div>
 
-<main>
-  <h1>媽媽的手作布包</h1>
-  <p class="page-desc">每一塊布料的挑選、每一道車縫，都蘊含著獨一無二的溫度。<br>喜歡都可以直接點擊 LINE 詢問喔！</p>
+<main class="catalog-page">
+  <section class="site-shell page-hero" aria-labelledby="catalogTitle">
+    <p class="section-kicker">全部商品</p>
+    <h1 id="catalogTitle">手作布包與布藝生活小物</h1>
+    <p>每件作品皆以少量製作為主，商品狀態與庫存請以下單前 LINE 確認為準。</p>
+  </section>
 
-  <div id="loading">正在去裁縫間把作品搬出來... 🧵</div>
-  <div class="product-grid" id="productContainer"></div>
+  <section class="site-shell catalog-section" aria-labelledby="filterTitle">
+    <h2 id="filterTitle" class="sr-only">商品篩選</h2>
+
+    <form id="productFilterForm" class="catalog-toolbar">
+      <label class="field-group field-group--wide" for="productSearch">
+        <span>搜尋商品</span>
+        <input id="productSearch" type="search" name="search" placeholder="輸入商品名稱、SKU 或關鍵字" autocomplete="off">
+      </label>
+
+      <label class="field-group" for="productCategory">
+        <span>商品分類</span>
+        <select id="productCategory" name="category">
+          <option value="all">全部分類</option>
+        </select>
+      </label>
+
+      <label class="field-group" for="productStatus">
+        <span>商品狀態</span>
+        <select id="productStatus" name="status">
+          <option value="all">全部狀態</option>
+          <option value="in_stock">現貨</option>
+          <option value="made_to_order">接單製作</option>
+          <option value="sold_out">已售出</option>
+        </select>
+      </label>
+
+      <label class="field-group" for="productSort">
+        <span>排序</span>
+        <select id="productSort" name="sort">
+          <option value="latest">最新上架</option>
+          <option value="price_asc">價格由低至高</option>
+          <option value="price_desc">價格由高至低</option>
+        </select>
+      </label>
+
+      <button id="clearProductFilters" class="btn btn--secondary catalog-toolbar__clear" type="button">清除條件</button>
+    </form>
+
+    <div class="catalog-summary" aria-live="polite">
+      <p id="productResultCount">顯示 0 件商品</p>
+    </div>
+
+    <div id="productStateMessage" class="loading-state" role="status">正在載入商品...</div>
+    <div id="productContainer" class="catalog-grid" aria-live="polite"></div>
+  </section>
 </main>
 
 <div id="footer-placeholder"></div>
 
+<script src="site-config.js"></script>
 <script src="navbar.js"></script>
 <script src="footer.js"></script>
-
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
-<script>
-  // Firebase 設定
-  const firebaseConfig = {
-    apiKey: "AIzaSyAK7QVkeFUCWryls-ooFPcA5Z7Zr5PeQAg",
-    authDomain: "bagggg-f9088.firebaseapp.com",
-    projectId: "bagggg-f9088",
-    storageBucket: "bagggg-f9088.firebasestorage.app",
-    messagingSenderId: "951657039312",
-    appId: "1:951657039312:web:69fd0b25a7b516fb08a5d5"
-  };
-  
-  if (!firebase.apps.length) {
-    firebase.initializeApp(firebaseConfig);
-  }
-  const db = firebase.firestore();
-
-  const container = document.getElementById('productContainer');
-  const loading = document.getElementById('loading');
-
-  // 讀取產品資料 (依上架時間新到舊排序)
-  db.collection('products').orderBy('createdAt', 'desc').get().then((querySnapshot) => {
-    loading.style.display = 'none';
-    
-    if (querySnapshot.empty) {
-      container.innerHTML = '<p style="text-align:center; width:100%; color:#8D6E63;">目前架上還沒有作品，媽媽正在努力趕工中喔！</p>';
-      return;
-    }
-
-    let productsHtml = ''; // 優化：先組合 HTML 字串
-
-    querySnapshot.forEach((doc) => {
-      const p = doc.data();
-      productsHtml += `
-        <div class="product-card">
-          <img src="${p.imageUrl}" alt="${p.name}" class="product-img" loading="lazy">
-          <div class="product-info">
-            <div class="product-title">${p.name}</div>
-            <div class="product-desc">${p.description}</div>
-            <div class="product-price">NT$ ${p.price}</div>
-            <a href="javascript:void(0)" onclick="orderProduct('${p.name}')" class="buy-btn">
-               👉 LINE 詢問 / 預留
-            </a>
-          </div>
-        </div>
-      `;
-    });
-    
-    // 最後一次性將組合好的 HTML 塞入容器中
-    container.innerHTML = productsHtml;
-
-  }).catch((error) => {
-    console.error("Firebase 讀取錯誤: ", error);
-    loading.innerText = "載入失敗，請檢查網路連線";
-  });
-
-  // 點擊按鈕跳轉至 LINE 並帶入預設訊息
-  function orderProduct(productName) {
-    // ⚠️ 請確認這裡的 LINE ID 是正確的喔！
-    var lineId = "@130xhbqv"; 
-    var lineBaseUrl = "https://line.me/R/oaMessage/" + lineId + "/?"; 
-    var message = "你好，我在網站上看到【" + productName + "】，覺得很喜歡！想詢問這個還有現貨，或是可以幫我客製化訂做嗎？";
-    window.open(lineBaseUrl + encodeURIComponent(message));
-  }
-</script>
-
+<script src="firebase-config.js"></script>
+<script src="products.js"></script>
 </body>
 </html>

@@ -1,107 +1,110 @@
-const footerHTML = `
-<style>
-  footer {
-    background-color: #EFEBE9; /* 溫暖的淺大地色底 */
-    color: #5D4037;
-    padding: 40px 20px 20px;
-    margin-top: 60px;
-    border-top: 2px solid #D7CCC8;
-    font-family: sans-serif;
-  }
+const FOOTER_FALLBACK_LINE_URL = "https://line.me/R/ti/p/@130xhbqv";
 
-  .footer-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 30px;
-  }
+function getFooterLineUrl() {
+  return window.SiteConfig && window.SiteConfig.lineUrl
+    ? window.SiteConfig.lineUrl
+    : FOOTER_FALLBACK_LINE_URL;
+}
 
-  .footer-brand h3 {
-    margin: 0 0 15px 0;
-    color: #4E342E;
-    font-size: 1.3rem;
-  }
+function createFooterLink(label, href) {
+  const item = document.createElement("li");
+  const link = document.createElement("a");
+  link.href = href;
+  link.textContent = label;
+  item.appendChild(link);
+  return item;
+}
 
-  .footer-brand p {
-    font-size: 0.95rem;
-    color: #795548;
-    line-height: 1.6;
-    margin: 0;
-  }
+function initFooter() {
+  const placeholder = document.getElementById("footer-placeholder");
+  if (!placeholder) return;
 
-  .footer-links h4, .footer-contact h4 {
-    margin: 0 0 15px 0;
-    color: #4E342E;
-  }
+  const footer = document.createElement("footer");
+  footer.className = "site-footer";
 
-  .footer-links ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
+  const container = document.createElement("div");
+  container.className = "site-shell footer-container";
 
-  .footer-links li {
-    margin-bottom: 10px;
-  }
+  const brand = document.createElement("section");
+  brand.className = "footer-brand";
+  brand.setAttribute("aria-labelledby", "footerBrandTitle");
 
-  .footer-links a {
-    color: #795548;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
+  const brandTitle = document.createElement("h2");
+  brandTitle.id = "footerBrandTitle";
+  brandTitle.textContent = "手作縫紉工作室";
 
-  .footer-links a:hover {
-    color: #D84315; /* 滑鼠移過去變深橘色 */
-  }
+  const brandText = document.createElement("p");
+  brandText.textContent = "提供手作布包、布藝生活小物、客製訂製與衣物修改服務，從日常使用出發，細緻完成每一件作品。";
 
-  .footer-contact p {
-    font-size: 0.95rem;
-    margin: 5px 0;
-    color: #795548;
-  }
+  brand.append(brandTitle, brandText);
 
-  /* 最底部的版權區塊 */
-  .footer-bottom {
-    text-align: center;
-    margin-top: 40px;
-    padding-top: 20px;
-    border-top: 1px dashed #D7CCC8;
-    font-size: 0.85rem;
-    color: #8D6E63;
-  }
-</style>
+  const shop = document.createElement("section");
+  shop.className = "footer-column";
+  const shopTitle = document.createElement("h2");
+  shopTitle.textContent = "商品與服務";
+  const shopLinks = document.createElement("ul");
+  shopLinks.className = "footer-links";
+  [
+    ["全部商品", "products.html"],
+    ["衣物修改", "services.html"],
+    ["客製訂製詢價", "booking.html"],
+    ["品牌故事", "about.html"]
+  ].forEach(([label, href]) => shopLinks.appendChild(createFooterLink(label, href)));
+  shop.append(shopTitle, shopLinks);
 
-<footer>
-  <div class="footer-container">
-    <div class="footer-brand" style="flex: 2; min-width: 250px;">
-      <h3>手作縫紉工作室</h3>
-      <p>每一塊布料的挑選、每一道車縫，<br>都蘊含著獨一無二的溫度。<br>為您量身打造專屬的日常陪伴。</p>
-    </div>
+  const support = document.createElement("section");
+  support.className = "footer-column";
+  const supportTitle = document.createElement("h2");
+  supportTitle.textContent = "顧客服務";
+  const supportLinks = document.createElement("ul");
+  supportLinks.className = "footer-links";
+  [
+    ["聯絡與購買說明", "contact.html"],
+    ["購買須知", "shopping-guide.html"],
+    ["退換貨說明", "shopping-guide.html#returns"],
+    ["隱私權政策", "privacy.html"]
+  ].forEach(([label, href]) => supportLinks.appendChild(createFooterLink(label, href)));
+  support.append(supportTitle, supportLinks);
 
-    <div class="footer-links" style="flex: 1; min-width: 150px;">
-      <h4>快速導覽</h4>
-      <ul>
-        <li><a href="index.html">🏠 回到首頁</a></li>
-        <li><a href="products.html">👜 媽媽的布包</a></li>
-        <li><a href="booking.html">💬 預約客製/修改</a></li>
-        <li><a href="contact.html">❓ 常見問題</a></li>
-      </ul>
-    </div>
+  const contact = document.createElement("section");
+  contact.className = "footer-column";
+  const contactTitle = document.createElement("h2");
+  contactTitle.textContent = "聯絡方式";
 
-    <div class="footer-contact" style="flex: 1; min-width: 150px;">
-      <h4>聯絡我們</h4>
-      <p>📍 台中市大肚區</p>
-      <p>📱 LINE ID: <a href="https://line.me/R/ti/p/@130xhbqv" style="color: #4E342E; text-decoration: none; font-weight: bold;">@130xhbqv</a></p>
-      <p>🕒 營業時間: 18:00 - 22:00</p>
-    </div>
-  </div>
+  const contactText = document.createElement("p");
+  contactText.textContent = "LINE 官方帳號：@130xhbqv";
 
-  <div class="footer-bottom">
-    &copy; 2026 手作縫紉工作室. All Rights Reserved.
-  </div>
-</footer>
-`;
+  const serviceText = document.createElement("p");
+  serviceText.textContent = "服務時間：週一至週五 18:00 - 22:00";
 
-document.getElementById('footer-placeholder').innerHTML = footerHTML;
+  const deliveryText = document.createElement("p");
+  deliveryText.textContent = "配送方式：台中面交、超商寄送";
+
+  const paymentText = document.createElement("p");
+  paymentText.textContent = "付款方式：依 LINE 確認內容為準";
+
+  const lineLink = document.createElement("a");
+  lineLink.className = "text-link";
+  lineLink.href = getFooterLineUrl();
+  lineLink.target = "_blank";
+  lineLink.rel = "noopener noreferrer";
+  lineLink.textContent = "加入 LINE 詢問";
+
+  contact.append(contactTitle, contactText, serviceText, deliveryText, paymentText, lineLink);
+
+  const bottom = document.createElement("div");
+  bottom.className = "site-shell footer-bottom";
+
+  const copyright = document.createElement("p");
+  copyright.textContent = `© ${new Date().getFullYear()} 手作縫紉工作室. All Rights Reserved.`;
+
+  const notice = document.createElement("p");
+  notice.textContent = "手作品尺寸與花色會因材質略有差異，請以下單前確認為準。";
+
+  bottom.append(copyright, notice);
+  container.append(brand, shop, support, contact);
+  footer.append(container, bottom);
+  placeholder.replaceChildren(footer);
+}
+
+initFooter();

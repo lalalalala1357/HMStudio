@@ -1,193 +1,132 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>聯絡我們 | 手作縫紉工作室</title>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.gstatic.com; style-src 'self'; img-src 'self' data: blob:; connect-src 'self' https://*.googleapis.com https://*.firebaseio.com https://*.firebaseapp.com; frame-src https://*.firebaseapp.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>聯絡與購買說明 | 手作縫紉工作室</title>
+<meta name="description" content="手作縫紉工作室聯絡資訊、LINE 回覆時間、台中面交、超商配送、付款方式、製作時間與常見問題。">
+<meta property="og:title" content="聯絡與購買說明 | 手作縫紉工作室">
+<meta property="og:description" content="查看 LINE 聯絡方式、面交配送、付款流程、製作時間與手作品退換貨說明。">
+<meta property="og:image" content="baghead.jpg">
+<link rel="canonical" href="https://example.com/contact.html">
+<link rel="icon" href="baghead.jpg">
 <link rel="stylesheet" href="style.css">
-
-<style>
-  .contact-wrapper {
-    max-width: 800px;
-    margin: 40px auto;
-    background: #fff;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    text-align: left;
-  }
-
-  .page-title {
-    text-align: center;
-    color: #4E342E;
-    margin-bottom: 10px;
-  }
-
-  .page-desc {
-    text-align: center;
-    color: #795548;
-    margin-bottom: 40px;
-  }
-
-  /* 資訊卡片區塊 */
-  .info-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    margin-bottom: 50px;
-  }
-
-  .info-card {
-    background: #FDFBF7;
-    border-top: 4px solid #8D6E63;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  }
-
-  .info-card h3 {
-    margin-top: 0;
-    color: #4E342E;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .info-card p, .info-card ul {
-    color: #6D4C41;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin: 0;
-    padding-left: 20px;
-  }
-
-  /* 常見問題 FAQ 設計 (使用純 HTML5 的 details 標籤，免寫 JS) */
-  .faq-section h2 {
-    color: #8D6E63;
-    border-bottom: 2px solid #D7CCC8;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-  }
-
-  details {
-    background: #FDFBF7;
-    border: 1px solid #EFEBE9;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    overflow: hidden;
-  }
-
-  summary {
-    padding: 15px 20px;
-    font-weight: bold;
-    color: #5D4037;
-    cursor: pointer;
-    background: #fff;
-    transition: background 0.3s;
-    list-style: none; /* 隱藏預設三角形 */
-    position: relative;
-  }
-
-  /* 自訂加號圖示 */
-  summary::after {
-    content: '+';
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.2rem;
-    color: #8D6E63;
-  }
-
-  details[open] summary::after {
-    content: '-';
-  }
-
-  summary:hover {
-    background: #FDFBF7;
-  }
-
-  .faq-answer {
-    padding: 15px 20px;
-    color: #6D4C41;
-    line-height: 1.6;
-    border-top: 1px dashed #D7CCC8;
-  }
-</style>
 </head>
 <body>
-
 <div id="navbar-placeholder"></div>
 
-<main>
-  <div class="contact-wrapper">
-    <h1 class="page-title">聯絡我們與工作室資訊</h1>
-    <p class="page-desc">如果您有任何交件或付款上的疑問，可以在這裡找到答案喔！</p>
+<main class="content-page">
+  <section class="site-shell page-hero content-hero" aria-labelledby="contactTitle">
+    <p class="section-kicker">聯絡與購買說明</p>
+    <h1 id="contactTitle">購買前的聯絡、付款與配送資訊</h1>
+    <p>現貨商品、客製訂製與衣物修改皆以 LINE 確認細節。若商品狀態、配送或付款方式有疑問，建議下單前先詢問。</p>
+    <div class="page-actions">
+      <a class="btn btn--line" href="https://line.me/R/ti/p/@130xhbqv" target="_blank" rel="noopener noreferrer">加入 LINE 官方帳號</a>
+      <a class="btn btn--secondary" href="shopping-guide.html">閱讀購買須知</a>
+    </div>
+  </section>
 
-    <div class="info-grid">
-      <div class="info-card">
-        <h3>📍 收件與面交方式</h3>
-        <ul>
-          <li><strong>面交：</strong> 台中市大肚區（近大肚車站），詳細地址請加 LINE 索取。</li>
-          <li><strong>寄件：</strong> 提供 7-11 / 全家 店到店寄件修改服務。</li>
-        </ul>
+  <section class="site-shell content-section" aria-labelledby="contactInfoTitle">
+    <div class="section-heading">
+      <div>
+        <p class="section-kicker">工作室資訊</p>
+        <h2 id="contactInfoTitle">聯絡與交件方式</h2>
       </div>
-      <div class="info-card">
-        <h3>🕒 服務與回覆時間</h3>
-        <ul>
-          <li><strong>週一至週五：</strong> 18:00 - 22:00</li>
-          <li><strong>週末與國定假日：</strong> 彈性製作，回覆較慢請見諒。</li>
-          <li>（白天為正職工作時間，恕無法接聽電話，請以 LINE 留言為主）</li>
-        </ul>
+      <p>白天可能無法即時回覆，訊息會於服務時間依序處理。</p>
+    </div>
+
+    <div class="content-grid content-grid--three">
+      <article class="info-card">
+        <h3>LINE 聯絡</h3>
+        <p>官方帳號：@130xhbqv。請用文字描述需求，並附上商品名稱、照片或尺寸資訊。</p>
+      </article>
+      <article class="info-card">
+        <h3>回覆時間</h3>
+        <p>週一至週五 18:00-22:00。週末與國定假日彈性回覆，急件請先確認是否可承接。</p>
+      </article>
+      <article class="info-card">
+        <h3>面交地點</h3>
+        <p>以台中地區面交為主，詳細地點與時間會在 LINE 中確認。</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="site-shell content-section" aria-labelledby="orderInfoTitle">
+    <div class="content-grid content-grid--four">
+      <article class="info-card">
+        <h2 id="orderInfoTitle">配送方式</h2>
+        <p>支援超商寄送與台中面交。寄送費用、取件門市與出貨時間以下單前確認為準。</p>
+      </article>
+      <article class="info-card">
+        <h2>付款方式</h2>
+        <p>付款方式會依商品類型與交件方式確認。客製品可能需先收訂金後排單。</p>
+      </article>
+      <article class="info-card">
+        <h2>製作時間</h2>
+        <p>現貨確認後可安排出貨；客製與修改依排單與材料狀況估算工期。</p>
+      </article>
+      <article class="info-card">
+        <h2>退換貨說明</h2>
+        <p>手作與客製品因個人需求製作，非重大瑕疵不適用一般尺寸不合退換。</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="site-shell content-section" aria-labelledby="faqTitle">
+    <div class="section-heading">
+      <div>
+        <p class="section-kicker">FAQ</p>
+        <h2 id="faqTitle">常見問題</h2>
       </div>
+      <p>若問題與特定商品或衣物相關，請附照片傳 LINE 會最準確。</p>
     </div>
 
-    <div class="faq-section">
-      <h2>🤔 常見問題 FAQ</h2>
-
+    <div class="faq-list">
       <details>
-        <summary>修改衣服大概需要幾個工作天？</summary>
+        <summary>現貨商品可以直接下單嗎？</summary>
         <div class="faq-answer">
-          一般的褲長改短、換拉鍊，大約需要 <strong>3~5 個工作天</strong>。如果是急件（隔天要），可以提前在 LINE 裡面告知，我們會評估目前的排單量，酌收 $50 元急件費幫您趕工喔！
+          <p>建議先透過 LINE 確認庫存、配送與付款方式。商品狀態會盡量即時更新，但仍以下單前確認為準。</p>
         </div>
       </details>
-
       <details>
-        <summary>手作包包可以客製化自己選布料嗎？</summary>
+        <summary>衣物修改需要先付款嗎？</summary>
         <div class="faq-answer">
-          當然可以！您可以告訴我們喜歡的風格（例如：日系碎花、素色無印風、貓咪圖案），我們會拍手邊現有的布料讓您挑選，為您做出獨一無二的包包。
+          <p>一般會先確認修改範圍與報價，再依交件方式討論付款時間。急件或需採買材料時可能需先支付部分費用。</p>
         </div>
       </details>
-
       <details>
-        <summary>請問付款方式有哪些？</summary>
+        <summary>客製商品可以指定布料嗎？</summary>
         <div class="faq-answer">
-          我們目前只有提供 <strong>現金付款！</strong>
+          <p>可以討論色系、用途與風格。若需指定特殊布料，會依材料取得狀況與成本重新報價。</p>
         </div>
       </details>
-      
       <details>
-        <summary>如果衣服改完覺得還是不合適怎麼辦？</summary>
+        <summary>手作品尺寸會完全一樣嗎？</summary>
         <div class="faq-answer">
-          媽媽對手藝有絕對的責任心！如果是我們溝通上的誤差導致尺寸不合，一週內我們提供免費微調服務。建議面交時可以直接試穿確認最準確。
+          <p>手作品會因布料厚度、裁切與車縫產生些微差異，商品頁尺寸為人工量測，合理誤差請以下單前確認為準。</p>
         </div>
       </details>
-
     </div>
+  </section>
 
-    <div style="text-align: center; margin-top: 40px;">
-      <p style="color: #6D4C41; margin-bottom: 15px;">還有其他問題嗎？隨時歡迎傳訊息給我們！</p>
-      <a href="https://line.me/R/ti/p/@130xhbqv" class="btn-main btn-primary" style="display:inline-block; padding: 12px 30px; border-radius:30px; text-decoration:none;">💬 點我前往 LINE 留言</a>
+  <section class="site-shell content-section" aria-labelledby="contactCtaTitle">
+    <div class="notice-panel">
+      <h2 id="contactCtaTitle">下單前請先確認</h2>
+      <ul class="check-list">
+        <li>商品名稱、商品編號、數量與配送方式。</li>
+        <li>客製或修改需求的照片、尺寸與期望完成日期。</li>
+        <li>付款方式、面交時間或超商寄送資訊。</li>
+      </ul>
     </div>
-
-  </div>
+  </section>
 </main>
 
 <div id="footer-placeholder"></div>
 
+<script src="site-config.js"></script>
 <script src="navbar.js"></script>
 <script src="footer.js"></script>
-
 </body>
 </html>

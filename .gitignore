@@ -1,0 +1,28 @@
+.DS_Store
+Thumbs.db
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*serviceAccount*.json
+serviceAccountKey.json
+*-service-account.json
+
+# Logs and Firebase local debug output
+*.log
+firebase-debug.log*
+firestore-debug.log*
+ui-debug.log*
+
+# Dependency and build artifacts
+node_modules/
+.cache/
+dist/
+build/
+
+# Editor folders
+.idea/
+.vscode/

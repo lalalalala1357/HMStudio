@@ -1,125 +1,183 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>手作縫紉工作室 | 媽媽的雲端裁縫間</title>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.gstatic.com; style-src 'self'; img-src 'self' data: blob:; connect-src 'self' https://*.googleapis.com https://*.firebaseio.com https://*.firebaseapp.com; frame-src https://*.firebaseapp.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>手作縫紉工作室 | 台中手作布包、客製訂製與衣物修改</title>
+<meta name="description" content="手作縫紉工作室提供手工布包、布藝生活小物、客製訂製及衣物修改服務，支援台中面交與超商寄送。">
+<meta property="og:title" content="手作縫紉工作室 | 職人手作，讓日常多一份獨特">
+<meta property="og:description" content="提供手工布包、生活小物、客製訂製及衣物修改服務的台中在地手作工作室。">
+<meta property="og:image" content="baghead.jpg">
+<link rel="canonical" href="https://example.com/index.html">
+<link rel="icon" href="baghead.jpg">
 <link rel="stylesheet" href="style.css">
-
-<style>
-  /* 針對首頁的特別樣式，配合媽媽 Logo 的溫馨色調 */
-  body {
-    background-color: #FDFBF7; /* 米白底色 */
-  }
-
-  main {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 20px;
-    text-align: center; /* 首頁內容置中比較大氣 */
-  }
-
-  /* Logo 容器 */
-  .logo-area {
-    margin-bottom: 30px;
-  }
-  .logo-img {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid #EFEBE9;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  }
-
-  h1 {
-    color: #4E342E; /* 深咖啡色 */
-    font-size: 2rem;
-    margin-bottom: 10px;
-  }
-
-  .slogan {
-    font-size: 1.2rem;
-    color: #795548;
-    margin-bottom: 30px;
-    font-weight: normal;
-  }
-
-  .intro-box {
-    background: #fff;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    line-height: 1.8;
-    color: #5D4037;
-    margin-bottom: 40px;
-  }
-
-  /* 下方的導覽按鈕 */
-  .quick-links {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  .btn-main {
-    padding: 12px 25px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-  }
-  .btn-primary { background: #8D6E63; color: #fff; }
-  .btn-outline { border: 2px solid #8D6E63; color: #8D6E63; }
-  .btn-main:hover { opacity: 0.8; transform: translateY(-2px); }
-
-  /* 懸浮預約按鈕 (FAB) */
-  .fab {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #06C755; /* LINE 綠色 */
-    color: white;
-    padding: 12px 20px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    z-index: 1000;
-  }
-</style>
 </head>
 <body>
-
 <div id="navbar-placeholder"></div>
 
-<main>
-  <div class="logo-area">
-    <img src="baghead.jpg" alt="工作室 Logo" class="logo-img">
-  </div>
+<main class="home-main">
+  <section class="site-shell home-hero" aria-labelledby="homeHeroTitle">
+    <div class="hero-copy">
+      <p class="section-kicker">台中在地手作工作室</p>
+      <h1 id="homeHeroTitle">職人手作，讓日常多一份獨特</h1>
+      <p>提供手工布包、生活小物、客製訂製及衣物修改服務，從布料選擇到細節收邊，都以日常耐用與溫度為核心。</p>
+      <div class="hero-actions">
+        <a class="btn btn--primary" href="products.html">選購現貨商品</a>
+        <a class="btn btn--secondary" href="booking.html">詢問客製服務</a>
+      </div>
+    </div>
 
-  <h1>手作縫紉工作室</h1>
-  <p class="slogan">一針一線，縫製生活的溫度</p>
+    <figure class="hero-visual">
+      <img id="heroProductImage" src="baghead.jpg" alt="手作縫紉工作室手作布包與布藝小物" loading="eager">
+      <figcaption id="heroImageCaption">少量製作的布包與生活小物，適合日常使用與送禮。</figcaption>
+    </figure>
+  </section>
 
-  <div class="intro-box">
-    <p>歡迎來到媽媽的雲端裁縫間！🧵</p>
-    <p>我們利用下班後的寧靜時光，細心為您修改每一件衣物。<br>
-    不管是褲長改短、更換拉鍊，或是想要一個獨一無二的手工布包，<br>
-    我們都堅持用最細膩的手藝，賦予物品新的生命。</p>
-  </div>
+  <section class="site-shell home-section" aria-labelledby="categoryTitle">
+    <div class="section-heading">
+      <div>
+        <p class="section-kicker">商品分類</p>
+        <h2 id="categoryTitle">依需求找到適合的手作服務</h2>
+      </div>
+      <p>現貨、客製與衣物修改分流清楚，方便先瀏覽，再透過 LINE 確認細節與庫存。</p>
+    </div>
 
-  <div class="quick-links">
-    <a href="services.html" class="btn-main btn-outline">查看修改服務</a>
-    <a href="products.html" class="btn-main btn-outline">瀏覽手作成品</a>
-    <a href="booking.html" class="btn-main btn-primary">立即線上預約</a>
-  </div>
+    <div class="category-grid">
+      <article class="category-card">
+        <img src="baghead.jpg" alt="現貨手作包示意圖" loading="lazy" data-category-image>
+        <div class="category-card__body">
+          <h3>現貨手作包</h3>
+          <p>少量完成的布包與日常小物，適合想快速入手的顧客。</p>
+          <a class="text-link" href="products.html">查看現貨商品</a>
+        </div>
+      </article>
+
+      <article class="category-card">
+        <img src="baghead.jpg" alt="客製布藝品示意圖" loading="lazy" data-category-image>
+        <div class="category-card__body">
+          <h3>客製布藝品</h3>
+          <p>可依用途、尺寸與色系討論，製作托特包、杯套、收納小物等。</p>
+          <a class="text-link" href="booking.html">詢問客製流程</a>
+        </div>
+      </article>
+
+      <article class="category-card">
+        <img src="baghead.jpg" alt="衣物修改服務示意圖" loading="lazy" data-category-image>
+        <div class="category-card__body">
+          <h3>衣物修改服務</h3>
+          <p>褲長、腰圍、拉鍊與簡易修補，先傳照片評估價格與工期。</p>
+          <a class="text-link" href="services.html">查看服務項目</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="site-shell home-section" aria-labelledby="latestProductsTitle">
+    <div class="section-heading">
+      <div>
+        <p class="section-kicker">最新上架</p>
+        <h2 id="latestProductsTitle">近期完成的手作商品</h2>
+      </div>
+      <p>商品以實際庫存為準，喜歡的款式可先透過 LINE 詢問保留。</p>
+    </div>
+
+    <div id="latestProductsState" class="loading-state" role="status">正在載入最新商品...</div>
+    <div id="latestProducts" class="product-preview-grid" aria-live="polite"></div>
+  </section>
+
+  <section class="site-shell home-section" aria-labelledby="featureTitle">
+    <div class="section-heading">
+      <div>
+        <p class="section-kicker">品牌特色</p>
+        <h2 id="featureTitle">以日常使用為核心的細緻手作</h2>
+      </div>
+    </div>
+
+    <div class="feature-grid">
+      <article class="feature-card">
+        <h3>手工細緻製作</h3>
+        <p>重視車縫線、收邊與整體耐用度，讓作品能陪伴日常使用。</p>
+      </article>
+      <article class="feature-card">
+        <h3>少量製作，不易撞款</h3>
+        <p>依布料數量安排製作，每批款式皆有限量感與獨特性。</p>
+      </article>
+      <article class="feature-card">
+        <h3>支援客製需求</h3>
+        <p>可討論尺寸、用途、色系與細節，完成更貼近日常需求的作品。</p>
+      </article>
+      <article class="feature-card">
+        <h3>台中面交與超商寄送</h3>
+        <p>提供彈性的取貨方式，細節會在出貨前透過 LINE 確認。</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="site-shell home-section" aria-labelledby="processTitle">
+    <div class="section-heading">
+      <div>
+        <p class="section-kicker">購買流程</p>
+        <h2 id="processTitle">簡單確認後再付款出貨</h2>
+      </div>
+    </div>
+
+    <ol class="process-list">
+      <li>
+        <h3>選擇商品</h3>
+        <p>瀏覽現貨或提出想客製的款式與用途。</p>
+      </li>
+      <li>
+        <h3>LINE 確認庫存</h3>
+        <p>透過 LINE 確認商品狀態、尺寸與可出貨時間。</p>
+      </li>
+      <li>
+        <h3>確認付款與配送</h3>
+        <p>雙方確認付款方式、面交或寄送資訊。</p>
+      </li>
+      <li>
+        <h3>商品寄出或面交</h3>
+        <p>完成後安排寄送或台中指定地點面交。</p>
+      </li>
+    </ol>
+  </section>
+
+  <section class="site-shell home-section" aria-labelledby="storyTitle">
+    <div class="story-panel">
+      <img id="storyImage" src="baghead.jpg" alt="手作縫紉工作室品牌故事" loading="lazy">
+      <div>
+        <p class="section-kicker">品牌故事</p>
+        <h2 id="storyTitle">從一針一線開始，讓布料成為日常陪伴</h2>
+        <p>手作縫紉工作室從家用縫紉與衣物修改累積經驗，將布料、車縫與實用設計結合，製作能長久使用的布包與生活小物。</p>
+        <p>我們保留手作的溫度，也重視溝通、品質與交付節奏，讓每一次訂製與購買都清楚安心。</p>
+        <a class="text-link" href="about.html">閱讀品牌故事</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="site-shell home-section" aria-labelledby="finalCtaTitle">
+    <div class="cta-panel">
+      <div>
+        <h2 id="finalCtaTitle">想找一件剛好的手作布包嗎？</h2>
+        <p>先瀏覽現貨商品，也可以直接加入 LINE 詢問客製與修改需求。</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn btn--secondary" href="products.html">查看全部商品</a>
+        <a class="btn btn--line" href="https://line.me/R/ti/p/@130xhbqv" target="_blank" rel="noopener noreferrer">加入 LINE 詢問</a>
+      </div>
+    </div>
+  </section>
 </main>
 
 <div id="footer-placeholder"></div>
-<a href="https://line.me/R/ti/p/@130xhbqv" class="fab">💬 加 LINE 詢問</a>
+
+<script src="site-config.js"></script>
 <script src="navbar.js"></script>
 <script src="footer.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script src="home.js"></script>
 </body>
 </html>

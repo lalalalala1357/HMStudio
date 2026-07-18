@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.gstatic.com; style-src 'self'; img-src 'self' data: blob:; connect-src 'self' https://*.googleapis.com https://*.firebaseio.com https://*.firebaseapp.com; frame-src https://*.firebaseapp.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>商品詳情 | 手作縫紉工作室</title>
+<meta name="description" content="查看手作縫紉工作室商品詳情、尺寸、材質、顏色、保養方式與配送說明。">
+<meta property="og:title" content="商品詳情 | 手作縫紉工作室">
+<meta property="og:description" content="查看手作商品完整資訊，並透過 LINE 詢問庫存、付款與配送方式。">
+<meta property="og:image" content="baghead.jpg">
+<link rel="canonical" href="https://example.com/product-detail.html">
+<link rel="icon" href="baghead.jpg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="navbar-placeholder"></div>
+
+<main class="detail-page">
+  <section class="site-shell detail-loading" id="detailLoading" role="status">
+    正在載入商品詳情...
+  </section>
+
+  <section class="site-shell detail-error" id="detailError" hidden>
+    <h2>商品暫時無法瀏覽</h2>
+    <p>商品資料暫時無法載入，請稍後再試。</p>
+    <a class="btn btn--primary" href="products.html">返回商品列表</a>
+  </section>
+
+  <article class="site-shell product-detail" id="detailContent" hidden>
+    <div class="detail-media">
+      <img id="detailImage" src="baghead.jpg" alt="商品照片">
+    </div>
+
+    <div class="detail-info">
+      <p class="section-kicker">商品詳情</p>
+      <h1 id="detailName">商品名稱</h1>
+
+      <div class="detail-meta-row">
+        <span id="detailStatus" class="status-badge">現貨</span>
+        <span>SKU：<strong id="detailSku"></strong></span>
+      </div>
+
+      <p id="detailPrice" class="detail-price">NT$ 0</p>
+
+      <dl class="detail-specs">
+        <div>
+          <dt>商品分類</dt>
+          <dd id="detailCategory"></dd>
+        </div>
+        <div>
+          <dt>尺寸</dt>
+          <dd id="detailSize"></dd>
+        </div>
+        <div>
+          <dt>材質</dt>
+          <dd id="detailMaterial"></dd>
+        </div>
+        <div>
+          <dt>顏色</dt>
+          <dd id="detailColor"></dd>
+        </div>
+        <div>
+          <dt>是否支援客製</dt>
+          <dd id="detailCustomizable"></dd>
+        </div>
+      </dl>
+
+      <div class="detail-actions">
+        <a id="detailLineLink" class="btn btn--line" href="https://line.me/R/ti/p/@130xhbqv" target="_blank" rel="noopener noreferrer">LINE 詢問此商品</a>
+        <a class="btn btn--secondary" href="products.html">返回全部商品</a>
+      </div>
+    </div>
+
+    <section class="detail-section" aria-labelledby="detailDescriptionTitle">
+      <h2 id="detailDescriptionTitle">商品完整說明</h2>
+      <p id="detailDescription"></p>
+    </section>
+
+    <section class="detail-section" aria-labelledby="detailCareTitle">
+      <h2 id="detailCareTitle">保養方式</h2>
+      <p id="detailCare"></p>
+    </section>
+
+    <section class="detail-section" aria-labelledby="detailDeliveryTitle">
+      <h2 id="detailDeliveryTitle">配送說明</h2>
+      <p id="detailDelivery"></p>
+    </section>
+  </article>
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script src="site-config.js"></script>
+<script src="navbar.js"></script>
+<script src="footer.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script src="product-detail.js"></script>
+</body>
+</html>

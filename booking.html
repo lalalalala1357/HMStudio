@@ -1,160 +1,129 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>線上預約 | 手作縫紉工作室</title>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.gstatic.com; style-src 'self'; img-src 'self' data: blob:; connect-src 'self' https://*.googleapis.com https://*.firebaseio.com https://*.firebaseapp.com; frame-src https://*.firebaseapp.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>客製與修改詢價 | 手作縫紉工作室</title>
+<meta name="description" content="透過 LINE 詢問手作布藝客製、衣物修改與工期安排，請提供照片、尺寸與期望完成日期以利報價。">
+<meta property="og:title" content="客製與修改詢價 | 手作縫紉工作室">
+<meta property="og:description" content="了解手作布包客製與衣物修改詢價流程，傳送照片後由工作室確認價格與排單時間。">
+<meta property="og:image" content="baghead.jpg">
+<link rel="canonical" href="https://example.com/booking.html">
+<link rel="icon" href="baghead.jpg">
 <link rel="stylesheet" href="style.css">
-
-<style>
-  .booking-wrapper {
-    max-width: 800px;
-    margin: 40px auto;
-    background: #fff;
-    padding: 50px 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    text-align: center;
-  }
-
-  h1 {
-    color: #4E342E;
-    margin-bottom: 10px;
-  }
-
-  .subtitle {
-    color: #795548;
-    margin-bottom: 40px;
-    font-size: 1.1rem;
-    line-height: 1.6;
-  }
-
-  /* 步驟區塊設計 */
-  .steps-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-bottom: 40px;
-    justify-content: center;
-  }
-
-  .step-box {
-    flex: 1 1 200px;
-    background: #FDFBF7;
-    border: 2px dashed #D7CCC8;
-    padding: 30px 20px;
-    border-radius: 15px;
-    position: relative;
-  }
-
-  .step-number {
-    background: #8D6E63;
-    color: #fff;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    border-radius: 50%;
-    font-weight: bold;
-    position: absolute;
-    top: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .step-box h3 {
-    color: #4E342E;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-
-  .step-box p {
-    color: #6D4C41;
-    font-size: 0.95rem;
-    margin: 0;
-    line-height: 1.5;
-  }
-
-  /* LINE 按鈕大特寫 */
-  .line-cta-area {
-    background: #EFEBE9;
-    padding: 40px 20px;
-    border-radius: 15px;
-    margin-top: 20px;
-  }
-
-  .btn-line-huge {
-    display: inline-block;
-    background: #06C755; /* LINE 的官方綠色 */
-    color: #fff;
-    font-size: 1.2rem;
-    font-weight: bold;
-    padding: 15px 40px;
-    border-radius: 50px;
-    text-decoration: none;
-    box-shadow: 0 4px 10px rgba(6, 199, 85, 0.3);
-    transition: 0.3s;
-  }
-
-  .btn-line-huge:hover {
-    background: #05A346;
-    transform: translateY(-3px);
-  }
-
-  .notice {
-    margin-top: 20px;
-    font-size: 0.9rem;
-    color: #8D6E63;
-  }
-</style>
 </head>
 <body>
-
 <div id="navbar-placeholder"></div>
 
-<main>
-  <div class="booking-wrapper">
-    <h1>一對一專屬討論與預約</h1>
-    <p class="subtitle">為了給您最精準的報價與最好的服務品質，<br>我們全面採用 LINE 官方帳號進行客製化溝通喔！</p>
+<main class="content-page">
+  <section class="site-shell page-hero content-hero" aria-labelledby="bookingTitle">
+    <p class="section-kicker">客製與修改詢價</p>
+    <h1 id="bookingTitle">先確認需求，再安排製作與修改</h1>
+    <p>客製布藝品與衣物修改皆以 LINE 文字、照片與尺寸溝通為主。尚未確認報價與工期前，不視為完成預約或排單。</p>
+    <div class="page-actions">
+      <a class="btn btn--line" href="https://line.me/R/ti/p/@130xhbqv" target="_blank" rel="noopener noreferrer">加入 LINE 詢問</a>
+      <a class="btn btn--secondary" href="services.html">查看修改價目</a>
+    </div>
+  </section>
 
-    <div class="steps-container">
-      <div class="step-box">
-        <div class="step-number">1</div>
-        <h3>📷 拍下照片</h3>
-        <p>拍下您需要修改的衣物部位，或是準備好想訂製的包包參考圖片。</p>
+  <section class="site-shell content-section" aria-labelledby="bookingProcessTitle">
+    <div class="section-heading">
+      <div>
+        <p class="section-kicker">詢價流程</p>
+        <h2 id="bookingProcessTitle">五個步驟完成初步評估</h2>
       </div>
-      <div class="step-box">
-        <div class="step-number">2</div>
-        <h3>💬 加入 LINE</h3>
-        <p>點擊下方按鈕加入媽媽的專屬 LINE 官方帳號。</p>
-      </div>
-      <div class="step-box">
-        <div class="step-number">3</div>
-        <h3>✨ 確認報價</h3>
-        <p>傳送照片並簡單說明需求，我們會盡快回覆您報價與所需工作天數！</p>
-      </div>
+      <p>資訊越完整，越能快速確認是否可承接、價格範圍與製作時間。</p>
     </div>
 
-    <div class="line-cta-area">
-      <h3 style="color: #4E342E; margin-top: 0; margin-bottom: 20px;">準備好要跟媽媽聊聊了嗎？</h3>
-      
-      <a href="https://line.me/R/ti/p/@130xhbqv" target="_blank" class="btn-line-huge">
-        加入 LINE 官方帳號
-      </a>
-      
-      <p class="notice">
-        🕒 工作室回覆時間：週一至週五 18:00 - 22:00<br>
-        (白天媽媽有正職工作，訊息會在下班後依序用心回覆，感謝您的耐心等待！)
-      </p>
+    <ol class="process-list process-list--five">
+      <li>
+        <h3>拍攝照片</h3>
+        <p>拍下衣物全貌、需修改位置，或準備想客製的款式參考圖。</p>
+      </li>
+      <li>
+        <h3>加入 LINE</h3>
+        <p>透過官方帳號傳送照片與文字需求，避免訊息分散。</p>
+      </li>
+      <li>
+        <h3>說明需求</h3>
+        <p>提供尺寸、用途、喜歡的色系、期望完成日期與預算範圍。</p>
+      </li>
+      <li>
+        <h3>確認報價</h3>
+        <p>工作室依材料、工法與排單狀況回覆價格與工期。</p>
+      </li>
+      <li>
+        <h3>確認後排單</h3>
+        <p>雙方確認內容後安排製作或修改，付款與交件方式另行確認。</p>
+      </li>
+    </ol>
+  </section>
+
+  <section class="site-shell content-section" aria-labelledby="prepareTitle">
+    <div class="content-grid content-grid--two">
+      <article class="info-card">
+        <h2 id="prepareTitle">詢價時請提供</h2>
+        <ul class="check-list">
+          <li>衣物或客製品的清楚照片，至少包含正面、背面與細節位置。</li>
+          <li>希望調整的尺寸，例如褲長縮短幾公分、包款寬高或背帶長度。</li>
+          <li>期望完成日期；急件請先詢問，會依排單狀況評估。</li>
+          <li>收件方式，包含台中面交或超商寄送。</li>
+        </ul>
+      </article>
+
+      <article class="info-card">
+        <h2>排單提醒</h2>
+        <p>客製與修改皆為人工製作，會依材料取得、工法難度與現有排程安排。未確認報價、付款與交件方式前，尚不會保留製作檔期。</p>
+        <a class="text-link" href="shopping-guide.html">查看付款與配送說明</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="site-shell content-section" aria-labelledby="customScopeTitle">
+    <div class="section-heading">
+      <div>
+        <p class="section-kicker">可詢問項目</p>
+        <h2 id="customScopeTitle">手作布藝與衣物修改</h2>
+      </div>
+      <p>客製內容以日常布包、生活小物與實用修改為主，特殊材質會先評估是否可承接。</p>
     </div>
 
-  </div>
+    <div class="content-grid content-grid--three">
+      <article class="info-card">
+        <h3>布包與提袋</h3>
+        <p>托特包、便當袋、斜背小包、飲料提袋等，可討論尺寸、用途與色系。</p>
+      </article>
+      <article class="info-card">
+        <h3>生活小物</h3>
+        <p>杯套、束口袋、零錢包、收納袋等小量客製，適合自用或送禮。</p>
+      </article>
+      <article class="info-card">
+        <h3>衣物修改</h3>
+        <p>褲長、裙襬、腰圍、拉鍊更換、鬆緊帶與簡易修補，請先傳照片確認。</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="site-shell home-section" aria-labelledby="bookingCtaTitle">
+    <div class="cta-panel">
+      <div>
+        <h2 id="bookingCtaTitle">準備好照片與尺寸後就可以詢問</h2>
+        <p>工作室會在服務時間依序回覆，確認內容後再安排排單。</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn btn--line" href="https://line.me/R/ti/p/@130xhbqv" target="_blank" rel="noopener noreferrer">前往 LINE</a>
+        <a class="btn btn--secondary" href="contact.html">聯絡資訊</a>
+      </div>
+    </div>
+  </section>
 </main>
 
 <div id="footer-placeholder"></div>
 
+<script src="site-config.js"></script>
 <script src="navbar.js"></script>
 <script src="footer.js"></script>
-
 </body>
 </html>
